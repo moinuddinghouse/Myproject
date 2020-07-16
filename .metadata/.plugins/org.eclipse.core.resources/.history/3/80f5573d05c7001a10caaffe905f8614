@@ -1,0 +1,81 @@
+package Test.test1;
+
+import java.io.IOException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+import org.testng.internal.thread.TestNGThread;
+
+
+
+public class Setup extends base{
+	public WebDriver driver;
+	
+
+	@BeforeTest
+	public void initialize() throws IOException
+	{
+	
+		 driver =initializeDriver();
+		// driver.get("https://cai.tools.sap/");
+
+	}
+	
+@Test
+	
+	public void basePageNavigation() throws IOException, InterruptedException
+	{
+
+		//one is inheritance
+
+		// creating object to that class and invoke methods of it
+		driver.get(prop.getProperty("url"));
+		System.out.println("start");
+		pagelanding l=new pagelanding(driver);
+		l.signinclick().click();
+		Thread.sleep(4000);
+		registeration rl= new registeration(driver);
+		rl.okclick().click();
+		driver.findElement(By.xpath("//div[@class='ids-control-container']/input[1]")).sendKeys("Ameen");
+		
+		//rl.firstnameclick().sendKeys("Ameen");
+		//rl.lastnameclick().sendKeys("k");
+		//rl.mailidclick().sendKeys("ameen123@gmail.com");
+		//rl.pswclick().sendKeys("Ameenu@321");
+		//rl.newpswclick().sendKeys("Ameenu@321");
+		//rl.checkaclick().click();
+		//rl.checkbclick().click();
+		//rl.buttonclick().click();
+		
+		
+//		
+//		lp.getEmail().sendKeys(Username);
+//		lp.getPassword().sendKeys(Password);
+//
+//		log.info(text);
+//		
+//		lp.getLogin().click();
+//		ForgotPassword fp= lp.forgotPassword();
+//		fp.getEmail().sendKeys("xxx");
+//		fp.sendMeInstructions().click();
+//		
+		
+		
+		}
+
+	@AfterTest
+	public void teardown()
+	{
+		
+		//driver.close();
+	
+		
+	}
+	
+}
