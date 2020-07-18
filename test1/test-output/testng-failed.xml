@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite parallel="none" name="Failed suite [Default suite]">
+<suite parallel="none" name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test parallel="none" name="Default test(failed)">
     <classes>
-      <class name="Test.test1.Setup">
+      <class name="Test_test1.Setup">
         <methods>
           <include name="teardown"/>
           <include name="initialize"/>
-          <include name="basePageNavigation"/>
+          <include name="ZasePage"/>
         </methods>
-      </class> <!-- Test.test1.Setup -->
+      </class> <!-- Test_test1.Setup -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
